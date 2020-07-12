@@ -1,0 +1,33 @@
+{{#each errors }}
+    <div class="row">
+        <div class="col-md-5 mx-auto">
+            <div class="alert alert-danger mt-4">{{ text }}</div>
+        </div>
+    </div>
+{{else}}
+
+{{/each }}
+<div class="row mt-4">
+    <div class="col-md-6 mx-auto text-center">
+        <a href="#"><img src="/img/logo.png" alt="" class="logo"></a>
+    </div>
+</div>
+<div class="row mt-4">
+    <div class="col-md-5 mx-auto">
+        <div class="card card-body">
+            <h3 class="text-center">Login</h3>
+            <form action="/users/login" method="post">
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="password" placeholder="Password" class="form-control" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                <p class="text-center mt-3"><a href="/users/forget"><i class="fa fa-lock fa-1x"></i> Forgot your password?</a></p>
+            </form>
+        </div>
+
+        <p class="text-center mt-4">New to AmashPay? <a href="/users/register">Sign Up</a></p>
+    </div>
+</div>
