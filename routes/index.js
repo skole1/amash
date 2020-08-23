@@ -18,7 +18,7 @@ const db = mysql.createConnection({
     })
     
 
-    router.get('/', (req, res)=>{
+    router.get('/', ensureAuthenticated, (req, res)=>{
         res.render('pages/dashboard',{
             title:'Amash Pay | Modern Payment gateway for Africa'
         })

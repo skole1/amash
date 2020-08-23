@@ -40,6 +40,7 @@ router.get('/forget', (req, res)=>{
     res.render('users/forget_password')
 }) 
 
+
 //Login Handle
 router.post('/login', (req, res, next)=>{
     passport.authenticate('local', {
@@ -115,6 +116,14 @@ router.post('/register', (req, res)=>{
         })
     }
 })
+
+//Logout user
+router.get('/logout', (req, res)=>{
+    req.logout();
+    req.flash('success_msg', 'You are logged out')
+    res.redirect('/users/login');
+})
+
 
 
 module.exports = router

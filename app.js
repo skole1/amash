@@ -60,8 +60,13 @@ app.use((req, res, next)=>{
 
 //Static Folder
 app.use(express.static(path.join(__dirname, 'public')))
+//Index Route
+app.get('/', (req, res)=>{
+  const title = 'Amash Pay | Modern Payment gateway for Africa';
+  res.render('index',{title});
+});
 
-app.use('/', dashboard)
+app.use('/dashboard', dashboard)
 app.use('/users', users)
 
 const PORT = process.env.PORT || 8080;
